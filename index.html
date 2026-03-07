@@ -108,6 +108,11 @@
             align-items: center;
             gap: 0.75rem;
         }
+        .nav-logo img {
+            height: auto;
+            width: 200px;
+            max-width: 100%;
+        }
         .nav-logo-icon {
             width: 40px;
             height: 40px;
@@ -192,8 +197,17 @@
             align-items: center;
             position: relative;
             background: linear-gradient(135deg, var(--white) 0%, var(--blue-light) 50%, var(--white) 100%);
+            background-image: url('https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/oral-surgeons-indiana-office-building.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             overflow: hidden;
             padding-top: 5rem;
+            animation: gradientShift 15s ease infinite;
+        }
+        @keyframes gradientShift {
+            0%, 100% { filter: brightness(0.5); }
+            50% { filter: brightness(0.45); }
         }
         .hero::before {
             content: '';
@@ -232,6 +246,34 @@
             padding: 0.4rem 1rem;
             margin-bottom: 1.5rem;
             box-shadow: var(--shadow-sm);
+        }
+        .hero-phone {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+        }
+        .hero-phone:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        .hero-phone svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
         }
         .hero-label .dot {
             width: 8px; height: 8px;
@@ -348,7 +390,7 @@
             align-items: center;
             gap: 3rem;
             flex-wrap: wrap;
-            opacity: 0.5;
+            opacity: 0.75;
         }
         .trust-item {
             font-weight: 700;
@@ -357,6 +399,15 @@
             letter-spacing: 0.05em;
             text-transform: uppercase;
             white-space: nowrap;
+        }
+        .trust-item img {
+            height: 50px;
+            width: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .trust-item img:hover {
+            opacity: 1;
         }
         .trust-divider {
             width: 1px; height: 24px;
@@ -370,7 +421,7 @@
         }
         .quick-links-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 1px;
             background: rgba(255,255,255,0.1);
             border-radius: 16px;
@@ -575,16 +626,22 @@
             transition: all 0.3s ease;
         }
         .doctor-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px -12px rgba(0,0,0,0.15);
             border-color: transparent;
         }
         .doctor-photo {
             width: 100%;
-            aspect-ratio: 3/3.5;
+            height: 280px;
             background: linear-gradient(135deg, var(--blue-light), #dbeafe);
             position: relative;
             overflow: hidden;
+        }
+        .doctor-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         .doctor-photo .initials {
             position: absolute;
@@ -712,6 +769,11 @@
             margin-bottom: 3rem;
         }
         .footer-brand .nav-logo { margin-bottom: 1rem; }
+        .footer-brand .nav-logo img {
+            height: auto;
+            width: 200px;
+            max-width: 100%;
+        }
         .footer-brand .nav-logo-text { color: var(--white); }
         .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 280px; }
         .footer h4 {
@@ -758,6 +820,16 @@
             font-size: 0.8rem;
             color: rgba(255,255,255,0.4);
         }
+        .footer-map {
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .footer-map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
 
         /* ====== RESPONSIVE ====== */
         @media (max-width: 968px) {
@@ -772,6 +844,8 @@
             .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .quick-links-grid { grid-template-columns: repeat(3, 1fr); }
+            .nav-logo img { width: 150px; }
+            .footer-brand .nav-logo img { width: 150px; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
@@ -796,6 +870,8 @@
             .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
             .quick-links-grid { grid-template-columns: repeat(2, 1fr); }
             .section { padding: 4rem 0; }
+            .nav-logo img { width: 120px; }
+            .footer-brand .nav-logo img { width: 120px; }
         }
     </style>
 </head>
@@ -805,8 +881,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
-                <div class="nav-logo-icon"></div>
-                <div class="nav-logo-text">ORAL SURGEONS <span>OF INDIANA</span></div>
+                <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/logo-2.webp" alt="Oral Surgeons of Indiana Logo">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
@@ -834,11 +909,267 @@
                 </div>
                 <h1 class="heading-xl">Advanced Oral Surgery,<br><span class="text-blue">Compassionate Care</span></h1>
                 <p class="body-lg">Precision-driven oral and maxillofacial surgery in Indianapolis. From dental implants to complex reconstructive care, our expert team is here for you.</p>
+                <a href="tel:3178761095" class="hero-phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>(317) 876-1095</span>
+                </a>
                 <div class="hero-actions">
                     <a href="tel:3178761095" class="btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09KLXLMMKËLKØLHLKKXËLËÌÎHKKMÌÈKÐLHMLÜ]ÜÝÏ\]Y\Ý\Ú[Y[ØOHYHÜÙ\XÙ\ÈÛ\ÜÏH\ÙXÛÛ\HÝ\Ù\XÙ\ÂÝÈÚYHMZYÚHMY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYHÝÚÙK[[XØ\HÝ[ÝÚÙK[[ZÚ[HÝ[]HMÈMÛKNKLMÈMÕËËÜ]ÜÝÏØOÙ]Ù]]Û\ÜÏH\Ë]\ÝX[]Û\ÜÏH\ËXØ\]Û\ÜÏH\Ë\Ý]È]Û\ÜÏHÝ]Z][H]Û\ÜÏHÝ][[X\ÏÙ]]Û\ÜÏHÝ][X[^\Ý\Ù[ÛÏÙ]Ù]]Û\ÜÏHÝ]Z][H]Û\ÜÏHÝ][[X\JÏÙ]]Û\ÜÏHÝ][X[YX\È^\Y[ÙOÙ]Ù]]Û\ÜÏHÝ]Z][H]Û\ÜÏHÝ][[X\KÙ]]Û\ÜÏHÝ][X[]Y[][ÏÙ]Ù]]Û\ÜÏHÝ]Z][H]Û\ÜÏHÝ][[X\Ù]]Û\ÜÏHÝ][X[ÛÜHÙ\XÙ\ÏÙ]Ù]Ù]Ù]]Û\ÜÏH\ËYØ][ËXYÙH]]Û\ÜÏHYÙK\Ý\ÈÎMÌÌÎÉÎMÌÌÎÉÎMÌÌÎÉÎMÌÌÎÉÎMÌÌÎÏÙ]]Û\ÜÏHYÙK]^KTÝ\]Y]ÜÏÙ]]Û\ÜÏHYÙK\ÝXÛHÝ\]Y[ÏÙ]Ù]Ù]Ù]Ù]ÜÙXÝ[ÛKKHOOOOOHTÕTOOOOOHKO]Û\ÜÏH\ÝX\]Û\ÜÏHÛÛZ[\]Û\ÜÏH\ÝZ][\È]Û\ÜÏH\ÝZ][HPSÓTÏÙ]]Û\ÜÏH\ÝY]Y\Ù]]Û\ÜÏH\ÝZ][HQOÙ]]Û\ÜÏH\ÝY]Y\Ù]]Û\ÜÏH\ÝZ][HQOÙ]]Û\ÜÏH\ÝY]Y\Ù]]Û\ÜÏH\ÝZ][HQÏÙ]Ù]Ù]Ù]KKHOOOOOHURPÒÈSÔÈOOOOOHKOÙXÝ[ÛÛ\ÜÏH]ZXÚË[[ÜÈ]Û\ÜÏHÛÛZ[\]Û\ÜÏH]ZXÚË[[ÜËYÜYHYHÈÛ\ÜÏH]ZXÚË[[È]Û\ÜÏH]ZXÚË[[ËZXÛÛÝÈY]ÐÞH]HLM]LMMMMMÏÚ\ÛHÞHHÞOHÈHÏ[HOHNHLOHHNHLHMÏ[HOHLOHLHHMLHLHÏÜÝÏÙ]Ü[Û\ÜÏH]ZXÚË[[Ë]^\Ý\Ú]ÜÜ[ØOHYHÈÛ\ÜÏH]ZXÚË[[È]Û\ÜÏH]ZXÚË[[ËZXÛÛÝÈY]ÐÞH]HLMLLMLLLLÏÛ[[HÚ[ÏHMMÏ[HOHMLOHLÈHLHLÈÏ[HOHMLOHMÈHLHMÈÏÜÝÏÙ]Ü[Û\ÜÏH]ZXÚË[[Ë]^Y\[ÜOÜÜ[ØOHYHÙØÝÜÈÛ\ÜÏH]ZXÚË[[È]Û\ÜÏH]ZXÚË[[ËZXÛÛÝÈY]ÐÞH]HLMÈ]LMMMXMMÏÚ\ÛHÞHHÞOHÈHÏ]HLÈ]LMLËLËÈÏ]HLMËLØMHËÍHÏÜÝÏÙ]Ü[Û\ÜÏH]ZXÚË[[Ë]^YY]HØÝÜÏÜÜ[ØOHYHØÛÛXÝÛ\ÜÏH]ZXÚË[[È]Û\ÜÏH]ZXÚË[[ËZXÛÛÝÈY]ÐÞH]HLHLÌËNHLËNHLÜËNKMNKLLØNHHHNÏÚ\ÛHÞHLÞOHLHÈÏÜÝÏÙ]Ü[Û\ÜÏH]ZXÚË[[Ë]^X\ÈÙXÙOÜÜ[ØOHYHÈÛ\ÜÏH]ZXÚË[[È]Û\ÜÏH]ZXÚË[[ËZXÛÛÝÈY]ÐÞHXÝHHOHÚYHZYÚHMHOHÏ[HOHHLOHLHÈLHLÏÜÝÏÙ]Ü[Û\ÜÏH]ZXÚË[[Ë]^XZÙHH^[Y[ÜÜ[ØOÙ]Ù]ÜÙXÝ[ÛKKHOOOOOHPÕUOOOOOHKOÙXÝ[ÛÛ\ÜÏHXÝ]ÙXÝ[ÛYHXÝ]]Û\ÜÏHÛÛZ[\]Û\ÜÏHXÝ]Z[XYÙK]Ü\\[[X]K[Û\ØÜÛ]Û\ÜÏHXÙZÛ\]\ÝX[ÝÈY]ÐÞH]HLLÎMLL[NLËNÝØÌLLÏÜÝÏÙ]Ù]]Û\ÜÏHXÝ]]^[[X]K[Û\ØÜÛÝYÙÙ\LÜ[Û\ÜÏHX[ÙXÝ[Û[X[XÝ]Ý\XÝXÙOÜÜ[Û\ÜÏHXY[Ë[ÈÜ[Ý\Ù\H^Ù[[ÙH[[X[\Û\ÏÚÛ\ÜÏHÙK[Y]Ü[Ý\Ù[ÛÈÙ[X[KÙHÝYHY[ÙYÜ[[X^[ÙXÚX[Ý\ÚXØ[Ø\HÚ]XÚ\Ú[Û^\\ÙK[H]Y[Y\Ý\ØXÚYHXÚ\
-HÜÙ\ÝX\RRKË[\ÙH[YØ[Ë[ZXÚY[Ú\^KËÝ\X[H\ÈÛÛ[Z]YÈ[]\[È^Ù\[Û[Ø\H[HÛÛYÜXH[Ù\ÜÚ[Û[[\ÛY[ÜÛ\ÜÏHÙK[YÚ]\[ÝHYYÝ][HÜ[Ý\Ù\HÜÛÛ\^XÛÛÝXÝ]HØ\KÙH[Ü]^H]Y[ÛÛYÜØY]K[YXØ][Û]\HÝ\ÙHØ^KÜ]Û\ÜÏHXÝ]YX]\\È]Û\ÜÏHXÝ]YX]\H]Û\ÜÏHXÝ]YX]\KZXÛÛÝÈY]ÐÞH]HLLKLLLLHKMKLËNKMÏÛ[[HÚ[ÏHLMHHLKHÏÜÝÏÙ]Ü[Ý]K[Ù]KP\XÚÛÙÞOÜÜ[Ù]]Û\ÜÏHXÝ]YX]\H]Û\ÜÏHXÝ]YX]\KZXÛÛÝÈY]ÐÞH]HLLÎMLL[NLËNÝØÌLLÏÜÝÏÙ]Ü[]Y[ØY]H\ÝÜÜ[Ù]]Û\ÜÏHXÝ]YX]\H]Û\ÜÏHXÝ]YX]\KZXÛÛÝÈY]ÐÞH]HLXMKHKHMËÎLKÛLKLKMKHKHMËÎËÎKKLKÛËÎMËÎKLKMKHKHMËÎÏÜÝÏÙ]Ü[ÛÛ\\ÜÚ[Û]HØ\OÜÜ[Ù]]Û\ÜÏHXÝ]YX]\H]Û\ÜÏHXÝ]YX]\KZXÛÛÝÈY]ÐÞHÚ\ÛHÞHLÞOHHÈÏÛ[[HÚ[ÏHHLËHÈÈLMÈÈMKÎHLËÏÜÝÏÙ]Ü[Ø\PÙ\YYYÝ\Ù[ÛÏÜÜ[Ù]Ù]Ù]Ù]ÜÙXÝ[ÛKKHOOOOOHÑTPÑTÈOOOOOHKOÙXÝ[ÛÛ\ÜÏHÙ\XÙ\ÈÙXÝ[ÛYHÙ\XÙ\È]Û\ÜÏHÛÛZ[\]Û\ÜÏHÙ\XÙ\ËZXY\^XÙ[\[[X]K[Û\ØÜÛÜ[Û\ÜÏHX[ÙXÝ[Û[X[Ú]ÙHÙ\ÜÜ[Û\ÜÏHXY[Ë[ÈÝ\X]\YÙ\XÙ\ÏÚÛ\ÜÏHÙK[YÝ[OHX\Ú[]Ü\[NÈÙHX[YÙHHÚYH\Y]HÙØ[\È[][ÈÈH[Ý]Y][XÚX[YÚ[ÛÈ\Ú[ÈH]\ÝXÚ\]Y\È[XÚÛÙÞKÜÙ]]Û\ÜÏHÙ\XÙ\ËYÜY]Û\ÜÏHÙ\XÙKXØ\[[X]K[Û\ØÜÛÝYÙÙ\LH]Û\ÜÏHÙ\XÙKZXÛÛÝÈY]ÐÞHÚ\ÛHÞHLÞOHLHÈÏ]HLL]LL]MKKLNÍNÍKKLHLLHLMNKÎKLKLNÍKKLKÏÜÝÏÙ]Ï[[[\[ÏÚÏ\XÙ[Y[Y]]ÛÚËY[[[Ý[ÛZÙH]\[Y]Y\ØÛÝ\HÛÛYÜ[ÛÛY[ÙHÈX]ÜXZË]YÚ[[ÞHYKÜÙ]]Û\ÜÏHÙ\XÙKXØ\[[X]K[Û\ØÜÛÝYÙÙ\L]Û\ÜÏHÙ\XÙKZXÛÛÝÈY]ÐÞH]HLLÛLHLMKLLM^Ï]HLMÛLHLMHÏ]HLLLHLMHÏÜÝÏÙ]ÏÚ\ÙÛHY]ÚÏ^\[[Ý[Ù\[Û\ËH\ÝY]È][Ü[Ù[HØ]\ÙHÙZ[[ÜÝÙ[ÈÚ[\H\ÛÝ[ÝYÚÛÛHÜ[HÈ[Y\ÙKÜÙ]]Û\ÜÏHÙ\XÙKXØ\[[X]K[Û\ØÜÛÝYÙÙ\LÈ]Û\ÜÏHÙ\XÙKZXÛÛÝÈY]ÐÞH]HLLÎMLL[NLËNÝØÌLLÏÜÝÏÙ]ÏÛHÜY[ÏÚÏ\ÝÜ[ÈÛH]X[]H[]X[]HÜÜ[X[[\[XÙ[Y[Z\ÜÚ[ÈY]Ý\[YHØ[Ø]\ÙH]ÈÛHÈ]ÜHÜ\ÛÜÜÙ]]Û\ÜÏHÙ\XÙKXØ\[[X]K[Û\ØÜÛÝYÙÙ\LH]Û\ÜÏHÙ\XÙKZXÛÛÝÈY]ÐÞHXÝHÈOHÈÚYHNZYÚHNHOHÏ[HOHÈLOHHHHLHHÏ[HOHHLOHHHHLHHÏÜÝÏÙ]Ï]ÈÝ\Ù\OÚÏÛÜXÝ]H]ÈÝ\Ù\HÈY\ÜÈÚÙ[][[[[\YÝ[\]Y\Ë[\Ý[È[Ý[Û\X\[ÙK[]X[]HÙYKÜÙ]]Û\ÜÏHÙ\XÙKXØ\[[X]K[Û\ØÜÛÝYÙÙ\L]Û\ÜÏHÙ\XÙKZXÛÛÝÈY]ÐÞHÚ\ÛHÞHLHÞOHLHHÏ[HOHHLOHHHMHLHMHÏÜÝÏÙ]ÏÜ[]ÛÙÞOÚÏXYÛÜÚ\È[X]Y[Ù\ÙX\Ù\ÈYXÝ[ÈHÜ[[X^[ÙXÚX[YÚ[ÛË[ÛY[È[ÜÚY\È[\Ú[ÛX[YÙ[Y[ÜÙ]]Û\ÜÏHÙ\XÙKXØ\[[X]K[Û\ØÜÛÝYÙÙ\LÈ]Û\ÜÏHÙ\XÙKZXÛÛÝÈY]ÐÞH]HLNHMÌKKLKËLËHËMKPMKHKHMHØËLKÍLÈKMHLKKLKKLÍLMKLMKHKHXÌÈKHHÈK[ÈÖÏÜÝÏÙ]ÏXÚX[][XOÚÏ[Y\Ù[ÞH[XÛÛÝXÝ]HØ\HÜXÚX[[\Y\È[ÛY[ÈXÝ\\ËXÙ\][ÛË[ÛÙ\ÜÝYH[XYÙKÜÙ]Ù]Ù]ÜÙXÝ[ÛKKHOOOOOHÐÕÔÈOOOOOHKOÙXÝ[ÛÛ\ÜÏHØÝÜÈÙXÝ[ÛYHØÝÜÈ]Û\ÜÏHÛÛZ[\]Û\ÜÏHØÝÜËZXY\^XÙ[\[[X]K[Û\ØÜÛÜ[Û\ÜÏHX[ÙXÝ[Û[X[Ý\X[OÜÜ[Û\ÜÏHXY[Ë[ÈYY]HØÝÜÏÚÛ\ÜÏHÙK[YÝ[OHX\Ú[]Ü\[NÈÝ\Ý\Ù[ÛÈ[ÈXØY\ÈÙÛÛX[Y^\Y[ÙKY[ÙYZ[[Ë[HÙ[Z[HÛÛ[Z]Y[È]\H]Y[ÜÙ]]Û\ÜÏHØÝÜËYÜY]Û\ÜÏHØÝÜXØ\[[X]K[Û\ØÜÛÝYÙÙ\LH]Û\ÜÏHØÝÜ\ÝÈ]Û\ÜÏH[]X[ÈÏÙ]Ù]]Û\ÜÏHØÝÜZ[ÈÏXÚ\
-HÝX\RROÚÏ]Û\ÜÏH]HÈ	[ÈÜ[	X^[ÙXÚX[Ý\Ù[ÛÙ]Ü[Z\ÙY[[X[\Û\ËÝX\][Y\ÈYÜYÚØÚÛÛ[X\YHXÚ[ÜÙØÚY[ÙHYÜYH[[[ÙH[XØÛÝ[[Ë\ÈÙ[\ÈHX\Ý\ÜÈYÜYH[[ÜX][ÛÞ\Ý[\ÈÛH[X[H[]\Ú]KÜHYHÈÛ\ÜÏHØÝÜ[[È[[ÈÝÈÚYHMZYÚHMY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYHHÝÚÙK[[XØ\HÝ[ÝÚÙK[[ZÚ[HÝ[]HMHLMLL[ÈËMÈÈÏÜÝÏØOÙ]Ù]]Û\ÜÏHØÝÜXØ\[[X]K[Û\ØÜÛÝYÙÙ\L]Û\ÜÏHØÝÜ\ÝÈ]Û\ÜÏH[]X[ÈÙ]Ù]]Û\ÜÏHØÝÜZ[ÈÏ[\ÙH[YØ[ÚÏ]Û\ÜÏH]HÈ	[ÈØ\PÙ\YYYÓTÏÙ]HØ\XÙ\YYYÜ[[X^[ÙXÚX[Ý\Ù[ÛÚ][ÜH[HYX\ÈÙÛ[XØ[^\Y[ÙKXÛÙÛ^YÜ\Ý\ÚXØ[^\\ÙKÛÛ[Z]Y[È]Y[XÙ[\YØ\K[\Ý[ÝZ\ÚYXØY[ZXÈXØÛÛ\\ÚY[ËÜHYHÈÛ\ÜÏHØÝÜ[[È[[ÈÝÈÚYHMZYÚHMY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYHHÝÚÙK[[XØ\HÝ[ÝÚÙK[[ZÚ[HÝ[]HMHLMLL[ÈËMÈÈÏÜÝÏØOÙ]Ù]]Û\ÜÏHØÝÜXØ\[[X]K[Û\ØÜÛÝYÙÙ\LÈ]Û\ÜÏHØÝÜ\ÝÈ]Û\ÜÏH[]X[ÈUÏÙ]Ù]]Û\ÜÏHØÝÜZ[ÈÏZXÚY[Ú\^OÚÏ]Û\ÜÏH]HÈ	[ÈÜ[	X^[ÙXÚX[Ý\Ù[ÛÙ]Ü[Z\ÙY[[X[KÜÝÚ[È\[ÜY[ÛÛÙ[][[ÈÙ[\ÜÝHYÚØÚÛÛHÝYYY][X[H[]\Ú]HÛÛZ[ÝÛÜYX][ÈÚ]YÚ\Ý\Ý[Ý[Û[ÛÛ\][È][\HYÜY\ÈÚ][Ý\YX\ËÜHYHÈÛ\ÜÏHØÝÜ[[È[[ÈÝÈÚYHMZYÚHMY]ÐÞH[HÛHÝÚÙOHÝ\[ÛÛÜÝÚÙK]ÚYHHÝÚÙK[[XØ\HÝ[ÝÚÙK[[ZÚ[HÝ[]HMHLMLL[ÈËMÈÈÏÜÝÏØOÙ]Ù]Ù]Ù]ÜÙXÝ[ÛKKHOOOOOHTÕSSÓPSÈOOOOOHKOÙXÝ[ÛÛ\ÜÏH\Ý[[ÛX[ÈÙXÝ[ÛYH\Ý[[ÛX[È]Û\ÜÏHÛÛZ[®er">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Request Appointment
+                    </a>
+                    <a href="#services" class="btn-secondary">
+                        Our Services
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Expert Surgeons</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5.0</div>
+                            <div class="stat-label">Patient Rating</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Core Services</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-floating-badge">
+                    <div>
+                        <div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="badge-text">5-Star Reviews</div>
+                        <div class="badge-sub">from our patients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TRUST BAR ====== -->
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <div class="trust-item">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/AAOMS_Logo-removebg-preview-e1765314417660.png" alt="AAOMS Logo">
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/IDA-Logo-e1765383099911.png" alt="IDA Logo">
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/ADA-Logo-1-e1765383073939.png" alt="ADA Logo">
+                </div>
+                <div class="trust-divider"></div>
+                <div class="trust-item">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/IDDS-logo-121-e1765383245501.png" alt="IDDS Logo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== QUICK LINKS ====== -->
+    <section class="quick-links">
+        <div class="container">
+            <div class="quick-links-grid">
+                <a href="#" class="quick-link">
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+                    </div>
+                    <span class="quick-link-text">First Visit</span>
+                </a>
+                <a href="#" class="quick-link">
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <span class="quick-link-text">Referral Form</span>
+                </a>
+                <a href="#doctors" class="quick-link">
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <span class="quick-link-text">Meet the Doctors</span>
+                </a>
+                <a href="#" class="quick-link">
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <span class="quick-link-text">Referring Doctors</span>
+                </a>
+                <a href="#contact" class="quick-link">
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <span class="quick-link-text">Map to Office</span>
+                </a>
+                <a href="#" class="quick-link">
+                    <div class="quick-link-icon">
+                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <span class="quick-link-text">Make a Payment</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ABOUT ====== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-image-wrapper animate-on-scroll">
+                <div class="placeholder-visual">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+            </div>
+            <div class="about-text animate-on-scroll stagger-2">
+                <span class="label section-label">About Our Practice</span>
+                <h2 class="heading-lg">Oral Surgery Excellence in Indianapolis</h2>
+                <p class="body-md">At Oral Surgeons of Indiana, we provide advanced oral and maxillofacial surgical care with precision, expertise, and a patient-first approach. Led by Dr. Richard (RJ) Joseph Stuart III, DDS, Dr. Denise Flanagan, DDS, and Dr. Michael Wirey, DDS, our team is committed to delivering exceptional care in a comfortable and professional environment.</p>
+                <p class="body-md">Whether you need routine oral surgery or complex reconstructive care, we prioritize patient comfort, safety, and education every step of the way.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <span>State-of-the-Art Technology</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <span>Patient Safety First</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <span>Compassionate Care</span>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                        </div>
+                        <span>Board-Certified Surgeons</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="services-header text-center animate-on-scroll">
+                <span class="label section-label">What We Offer</span>
+                <h2 class="heading-lg">Our Featured Services</h2>
+                <p class="body-md" style="margin-top: 1rem;">We manage a wide variety of problems relating to the mouth, teeth, and facial regions using the latest techniques and technology.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll stagger-1">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    </div>
+                    <h3>Dental Implants</h3>
+                    <p>Replacement teeth that look, feel, and function like natural teeth. Rediscover the comfort and confidence to eat, speak, laugh, and enjoy life.</p>
+                </div>
+                <div class="service-card animate-on-scroll stagger-2">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Wisdom Teeth</h3>
+                    <p>Expert removal of third molars, the last teeth to develop and often the cause of pain and crowding when there isn't enough room for them to emerge.</p>
+                </div>
+                <div class="service-card animate-on-scroll stagger-3">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Bone Grafting</h3>
+                    <p>Restoring bone quality and quantity for optimal implant placement. Missing teeth over time can cause jaw bone to atrophy or resorb.</p>
+                </div>
+                <div class="service-card animate-on-scroll stagger-1">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    </div>
+                    <h3>Jaw Surgery</h3>
+                    <p>Corrective jaw surgery to address skeletal and dental irregularities, improving function, appearance, and quality of life.</p>
+                </div>
+                <div class="service-card animate-on-scroll stagger-2">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3>Oral Pathology</h3>
+                    <p>Diagnosis and treatment of diseases affecting the oral and maxillofacial regions, including biopsies and lesion management.</p>
+                </div>
+                <div class="service-card animate-on-scroll stagger-3">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </div>
+                    <h3>Facial Trauma</h3>
+                    <p>Emergency and reconstructive care for facial injuries including fractures, lacerations, and soft tissue damage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== DOCTORS ====== -->
+    <section class="doctors section" id="doctors">
+        <div class="container">
+            <div class="doctors-header text-center animate-on-scroll">
+                <span class="label section-label">Our Team</span>
+                <h2 class="heading-lg">Meet the Doctors</h2>
+                <p class="body-md" style="margin-top: 1rem;">Our surgeons bring decades of combined experience, advanced training, and a genuine commitment to every patient.</p>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card animate-on-scroll stagger-1">
+                    <div class="doctor-photo">
+                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/11/Headshot-RJ-e1765300631985.png" alt="Dr. RJ Stuart III">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Richard (RJ) Stuart III</h3>
+                        <div class="title">DDS &bull; Oral & Maxillofacial Surgeon</div>
+                        <p>Born and raised in Indianapolis, Dr. Stuart attended Park Tudor High School and earned a Bachelor of Science degree in Finance and Accounting, as well as a Master's degree in Information Systems from Indiana University.</p>
+                        <a href="#" class="doctor-link">Full Bio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="doctor-card animate-on-scroll stagger-2">
+                    <div class="doctor-photo">
+                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/Doctor-Denise-Update.png" alt="Dr. Denise Flanagan">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Denise Flanagan</h3>
+                        <div class="title">DDS &bull; Board-Certified OMS</div>
+                        <p>A board-certified Oral and Maxillofacial Surgeon with more than 25 years of clinical experience, recognized for her surgical expertise, commitment to patient-centered care, and distinguished academic accomplishments.</p>
+                        <a href="#" class="doctor-link">Full Bio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="doctor-card animate-on-scroll stagger-3">
+                    <div class="doctor-photo">
+                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/11/image-17-e1764612306870.png" alt="Dr. Michael Wirey">
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Michael Wirey</h3>
+                        <div class="title">DDS &bull; Oral & Maxillofacial Surgeon</div>
+                        <p>Born and raised in Indiana, growing up in Greenwood and attending Center Grove High School. He studied at Indiana University Bloomington, graduating with highest distinction and completing multiple degrees within four years.</p>
+                        <a href="#" class="doctor-link">Full Bio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section class="testimonials section" id="testimonials">
+        <div class="container">
             <div class="testimonials-header text-center animate-on-scroll">
                 <span class="label section-label">Patient Reviews</span>
                 <h2 class="heading-lg">What Our Patients Say</h2>
@@ -882,10 +1213,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="nav-logo">
-                        <div class="nav-logo-icon" style="border-color: rgba(255,255,255,0.3);">
-                            <div style="width:8px;height:8px;border:2.5px solid rgba(255,255,255,0.3);border-radius:50%;"></div>
-                        </div>
-                        <div class="nav-logo-text">ORAL SURGEONS <span>OF INDIANA</span></div>
+                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/logo-2.webp" alt="Oral Surgeons of Indiana Logo">
                     </div>
                     <p>Advanced oral and maxillofacial surgical care with precision, expertise, and a patient-first approach.</p>
                 </div>
@@ -896,6 +1224,8 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#doctors">Our Doctors</a></li>
                         <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#">Patient Information</a></li>
+                        <li><a href="#">Referring Doctors</a></li>
                     </ul>
                 </div>
                 <div>
@@ -918,6 +1248,9 @@
                         <span>Tel: (317) 876-1095<br>Fax: (317) 875-7275</span>
                     </div>
                 </div>
+            </div>
+            <div class="footer-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.8!2d-86.2556!3d39.8944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDUzJzM5LjgiTiA4NsKwMTUnMjAuMiJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2026 Oral Surgeons of Indiana. All rights reserved.</span>
