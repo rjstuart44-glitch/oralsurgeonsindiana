@@ -269,287 +269,46 @@
         }
 
         .quick-link-card {
-            background: linear-gradient(135deg, #3D3225 0%, #4A4238 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .quick-link-card:hover {
-            transform: translateY(-8px);
-            border-color: #6B8F71;
-            background: linear-gradient(135deg, #4A4238 0%, #3D3225 100%);
-        }
-
-        .quick-link-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #6B8F71;
-        }
-
-        .quick-link-card h3 {
-            font-family: 'Lora', serif;
-            font-size: 1.2rem;
-            color: #FFFDF9;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .quick-link-card p {
-            color: #D4CCBE;
-            font-size: 0.9rem;
-        }
-
-        /* ============= ABOUT SECTION ============= */
-        .about {
-            background-color: #FBF8F3;
-            padding: 5rem 2rem;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-family: 'Lora', serif;
-            font-size: 2.5rem;
-            color: #2C2418;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .section-label {
-            display: inline-block;
-            color: #6B8F71;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .about-content p {
-            color: #6B5E52;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        .about-visual {
-            background: linear-gradient(135deg, #EDF3EE 0%, #F5F0E8 100%);
-            border-radius: 20px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-        }
-
-        .about-visual::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background-color: #6B8F71;
-            border-radius: 50%;
-            opacity: 0.15;
-            top: -100px;
-            right: -100px;
-        }
-
-        .about-visual::after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background-color: #C4775A;
-            border-radius: 50%;
-            opacity: 0.1;
-            bottom: -50px;
-            left: -50px;
-        }
-
-        .about-visual-text {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .about-visual-text h3 {
-            font-family: 'Lora', serif;
-            font-size: 2rem;
-            color: #6B8F71;
-            margin-bottom: 1rem;
-        }
-
-        .about-visual-text p {
-            color: #6B5E52;
-            font-size: 1.1rem;
-        }
-
-        /* ============= SERVICES SECTION ============= */
-        .services {
-            background-color: #FBF8F3;
-            padding: 5rem 2rem;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services h2 {
-            font-family: 'Lora', serif;
-            font-size: 2.5rem;
-            text-align: center;
-            color: #2C2418;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .services > .section-label {
-            display: block;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background-color: #FFFDF9;
-            border-radius: 15px;
-            padding: 2.5rem;
-            border-left: 5px solid #C4775A;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            cursor: pointer;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(107, 143, 113, 0.15);
-            border-left-color: #6B8F71;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: #6B8F71;
-        }
-
-        .service-card h3 {
-            font-family: 'Lora', serif;
-            font-size: 1.4rem;
-            color: #2C2418;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: #6B5E52;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* ============= DOCTORS SECTION ============= */
-        .doctors {
-            background-color: #F5F0E8;
-            padding: 5rem 2rem;
-        }
-
-        .doctors-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .doctors h2 {
-            font-family: 'Lora', serif;
-            font-size: 2.5rem;
-            text-align: center;
-            color: #2C2418;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .doctors > .section-label {
-            display: block;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .doctors-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .doctor-card {
-            background-color: #FFFDF9;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .doctor-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(107, 143, 113, 0.15);
-        }
-
-        .doctor-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .doctor-info {
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .doctor-info h3 {
-            font-family: 'Lora', serif;
-            font-size: 1.4rem;
-            color: #6B8F71;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .doctor-info p {
-            color: #6B5E52;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* ============= TESTIMONIALS SECTION ============= */
-        .testimonials {
-            background-color: #2C2418;
-            padding: 5rem 2rem;
-        }
-
-        .testimonials-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonials h2 {
-            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #[NÂB]ZXÚË[[ËXØ\ÂXÚÙÜÝ[[X\YÜYY[
+LÍYYËÌÑÌH	KÍMÎL	JNÂY[Î[NÂÜ\\Y]\ÎM\Â^X[YÛÙ[\ÂÝ\ÛÜÚ[\Â[Ú][Û[ÜÈX\ÙNÂÜ\ÛÛY[Ü\[ÂB]ZXÚË[[ËXØ\Ý\Â[ÙÜN[Û]VJN
+NÂÜ\XÛÛÜÍÌNÂXÚÙÜÝ[[X\YÜYY[
+LÍYYËÍMÎ	KÌÑÌHL	JNÂB]ZXÚË[[ËZXÛÛÂÛ\Ú^N\[NÂX\Ú[XÝÛN\[NÂÛÛÜÍÌNÂB]ZXÚË[[ËXØ\ÈÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^NK[NÂÛÛÜÑNÂX\Ú[XÝÛN\[NÂÛ]ÙZYÚ
+ÂB]ZXÚË[[ËXØ\ÂÛÛÜÑ
+ÐÐNÂÛ\Ú^N\[NÂBÊOOOOOOOOOOOOHPÕUÑPÕSÓOOOOOOOOOOOOH
+ÂXÝ]ÂXÚÙÜÝ[XÛÛÜÑÎÂY[Î
+\[H[NÂBXÝ]XÛÛZ[\ÂX^]ÚYLÂX\Ú[]]ÎÂ\Ü^NÜYÂÜY][\]KXÛÛ[[ÎYYÂØ\
+[NÂ[YÛZ][\ÎÙ[\ÂBXÝ]XÛÛ[ÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^N\[NÂÛÛÜÌÌNÂX\Ú[XÝÛNK\[NÂÛ]ÙZYÚ
+ÌÂBÙXÝ[Û[X[Â\Ü^N[[KXØÚÎÂÛÛÜÍÌNÂÛ\Ú^N\[NÂÛ]ÙZYÚ
+ÌÂ^][ÙÜN\\Ø\ÙNÂ]\\ÜXÚ[Î\ÂX\Ú[XÝÛN\[NÂBXÝ]XÛÛ[ÂÛÛÜÍQMLÂX\Ú[XÝÛNK\[NÂ[KZZYÚKÂÛ\Ú^N\[NÂBXÝ]]\ÝX[ÂXÚÙÜÝ[[X\YÜYY[
+LÍYYËÑQÑQH	KÑQNL	JNÂÜ\\Y]\ÎÂZYÚ
+Â\Ü^N^Â[YÛZ][\ÎÙ[\Â\ÝYKXÛÛ[Ù[\ÂÜÚ][Û[]]NÂÝ\ÝÎY[ÂÞ\ÚYÝÎL
+ØJ
+JNÂBXÝ]]\ÝX[YÜHÂÛÛ[	ÉÎÂÜÚ][ÛXÛÛ]NÂÚYÌÂZYÚÌÂXÚÙÜÝ[XÛÛÜÍÌNÂÜ\\Y]\Î
+L	NÂÜXÚ]NMNÂÜLLÂYÚLLÂBXÝ]]\ÝX[Y\ÂÛÛ[	ÉÎÂÜÚ][ÛXÛÛ]NÂÚYÂZYÚÂXÚÙÜÝ[XÛÛÜÐÍ
+ÍÍPNÂÜ\\Y]\Î
+L	NÂÜXÚ]NNÂÝÛNMLÂYMLÂBXÝ]]\ÝX[]^ÂÜÚ][Û[]]NÂZ[^NÂ^X[YÛÙ[\ÂBXÝ]]\ÝX[]^ÈÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^N[NÂÛÛÜÍÌNÂX\Ú[XÝÛN\[NÂBXÝ]]\ÝX[]^ÂÛÛÜÍQMLÂÛ\Ú^NK\[NÂBÊOOOOOOOOOOOOHÑTPÑTÈÑPÕSÓOOOOOOOOOOOOH
+ÂÙ\XÙ\ÈÂXÚÙÜÝ[XÛÛÜÑÎÂY[Î
+\[H[NÂBÙ\XÙ\ËXÛÛZ[\ÂX^]ÚYLÂX\Ú[]]ÎÂBÙ\XÙ\ÈÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^N\[NÂ^X[YÛÙ[\ÂÛÛÜÌÌNÂX\Ú[XÝÛN\[NÂÛ]ÙZYÚ
+ÌÂBÙ\XÙ\ÈÙXÝ[Û[X[Â\Ü^NØÚÎÂ^X[YÛÙ[\ÂX\Ú[XÝÛNÜ[NÂBÙ\XÙ\ËYÜYÂ\Ü^NÜYÂÜY][\]KXÛÛ[[Î\X]
+ËYNÂØ\[NÂX\Ú[]ÜÜ[NÂBÙ\XÙKXØ\ÂXÚÙÜÝ[XÛÛÜÑNÂÜ\\Y]\ÎM\ÂY[Î\[NÂÜ\[Y
+\ÛÛYÐÍ
+ÍÍPNÂ[Ú][Û[ÜÈX\ÙNÂÞ\ÚYÝÎ
+M\ØJ
+JNÂÝ\ÛÜÚ[\ÂBÙ\XÙKXØ\Ý\Â[ÙÜN[Û]VJN
+NÂÞ\ÚYÝÎLÌØJL
+ËMËLLËMJNÂÜ\[YXÛÛÜÍÌNÂBÙ\XÙKZXÛÛÂÛ\Ú^NÜ[NÂX\Ú[XÝÛNK\[NÂÛÛÜÍÌNÂBÙ\XÙKXØ\ÈÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^NK[NÂÛÛÜÌÌNÂX\Ú[XÝÛN\[NÂÛ]ÙZYÚ
+ÌÂBÙ\XÙKXØ\ÂÛÛÜÍQMLÂ[KZZYÚKÂÛ\Ú^NM\[NÂBÊOOOOOOOOOOOOHÐÕÔÈÑPÕSÓOOOOOOOOOOOOH
+ÂØÝÜÈÂXÚÙÜÝ[XÛÛÜÑQNÂY[Î
+\[H[NÂBØÝÜËXÛÛZ[\ÂX^]ÚYLÂX\Ú[]]ÎÂBØÝÜÈÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^N\[NÂ^X[YÛÙ[\ÂÛÛÜÌÌNÂX\Ú[XÝÛN\[NÂÛ]ÙZYÚ
+ÌÂBØÝÜÈÙXÝ[Û[X[Â\Ü^NØÚÎÂ^X[YÛÙ[\ÂX\Ú[XÝÛNÜ[NÂBØÝÜËYÜYÂ\Ü^NÜYÂÜY][\]KXÛÛ[[Î\X]
+ËYNÂØ\[NÂX\Ú[]ÜÜ[NÂBØÝÜXØ\ÂXÚÙÜÝ[XÛÛÜÑNÂÜ\\Y]\ÎÂÝ\ÝÎY[Â[Ú][Û[ÜÈX\ÙNÂÞ\ÚYÝÎ
+M\ØJ
+JNÂBØÝÜXØ\Ý\Â[ÙÜN[Û]VJN
+NÂÞ\ÚYÝÎLÌØJL
+ËMËLLËMJNÂBØÝÜZ[XYÙHÂÚYL	NÂZYÚÌÂØXÝY]ÛÝ\ÂBØÝÜZ[ÈÂY[Î[NÂ^X[YÛÙ[\ÂBØÝÜZ[ÈÈÂÛY[Z[N	ÓÜIËÙ\YÂÛ\Ú^NK[NÂÛÛÜÍÌNÂX\Ú[XÝÛN\[NÂÛ]ÙZYÚ
+ÌÂBØÝÜZ[ÈÂÛÛÜÍQMLÂÛ\Ú^NM\[NÂ[KZZYÚKÂBÊOOOOOOOOOOOOHTÕSSÓPSÈÑPÕSÓOOOOOOOOOOOOH
+Â\Ý[[ÛX[ÈÂXÚÙÜÝ[XÛÛÜÌÌNÂY[Î
+\[H[NÂB\Ý[[ÛX[ËXÛÛZ[\ÂX^]ÚYLly: 'Lora', serif;
             font-size: 2.5rem;
             text-align: center;
             color: #FFFDF9;
@@ -820,12 +579,12 @@
     <!-- NAVBAR -->
     <nav>
         <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/logo-2.webp" alt="Oral Surgeons of Indiana" class="nav-logo">
-        <button class="menu-toggle" id="menuToggle">â°</button>
+        <button class="menu-toggle" id="menuToggle">&#9776;</button>
         <ul class="nav-links" id="navLinks">
             <li><a href="#services">Services</a></li>
             <li><a href="#doctors">Our Doctors</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="tel:+13178761095" class="cta-button">ð Call Now</a></li>
+            <li><a href="tel:+13178761095" class="cta-button">&#x1F4DE; Call Now</a></li>
         </ul>
     </nav>
 
@@ -874,32 +633,32 @@
             <h2>Why Choose Oral Surgeons of Indiana?</h2>
             <div class="quick-links-grid">
                 <div class="quick-link-card fade-in">
-                    <div class="quick-link-icon">ð¯</div>
+                    <div class="quick-link-icon">&#x1F3AF;</div>
                     <h3>Expert Surgeons</h3>
                     <p>Highly trained specialists with extensive experience in complex oral surgery procedures</p>
                 </div>
                 <div class="quick-link-card fade-in">
-                    <div class="quick-link-icon">ð¤</div>
+                    <div class="quick-link-icon">&#x1F4A4;</div>
                     <h3>IV Sedation</h3>
                     <p>Safe and comfortable sedation options to ensure a painless, anxiety-free experience</p>
                 </div>
                 <div class="quick-link-card fade-in">
-                    <div class="quick-link-icon">ð¥</div>
+                    <div class="quick-link-icon">&#x1F3E5;</div>
                     <h3>State-of-the-Art Facility</h3>
                     <p>Advanced technology and modern equipment for the safest procedures</p>
                 </div>
                 <div class="quick-link-card fade-in">
-                    <div class="quick-link-icon">ð¤</div>
+                    <div class="quick-link-icon">&#x1F91D;</div>
                     <h3>Patient-Focused Care</h3>
                     <p>We prioritize your comfort and well-being throughout your treatment journey</p>
                 </div>
                 <div class="quick-link-card fade-in">
-                    <div class="quick-link-icon">ð</div>
-                    <h3>Insurance & Financing</h3>
+                    <div class="quick-link-icon">&#x1F4CB;</div>
+                    <h3>Insurance &amp; Financing</h3>
                     <p>We accept most insurance plans and offer flexible payment options</p>
                 </div>
                 <div class="quick-link-card fade-in">
-                    <div class="quick-link-icon">â°</div>
+                    <div class="quick-link-icon">&#x23F0;</div>
                     <h3>Convenient Location</h3>
                     <p>Easily accessible Indianapolis location with flexible scheduling options</p>
                 </div>
@@ -933,32 +692,32 @@
             <h2>Comprehensive Oral Surgery Solutions</h2>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">ð¦·</div>
+                    <div class="service-icon">&#x1F9B7;</div>
                     <h3>Wisdom Teeth Extraction</h3>
                     <p>Safe and efficient removal of problematic wisdom teeth with minimal discomfort. Our surgeons have extensive experience handling even the most complex cases.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">â¨</div>
+                    <div class="service-icon">&#x2728;</div>
                     <h3>Dental Implants</h3>
                     <p>Restore your smile with state-of-the-art dental implants. We provide comprehensive implant surgery and restoration services for lasting results.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">ðï¸</div>
+                    <div class="service-icon">&#x1F3D7;&#xFE0F;</div>
                     <h3>Bone Grafting</h3>
                     <p>Advanced bone grafting procedures to rebuild jawbone structure and support dental implants, ensuring long-term success.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">ð´</div>
+                    <div class="service-icon">&#x1F634;</div>
                     <h3>IV Sedation Dentistry</h3>
                     <p>Comfortable, safe sedation options available for anxious patients. Our anesthesiologists ensure your complete safety and comfort.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">ð§</div>
+                    <div class="service-icon">&#x1F527;</div>
                     <h3>Orthognathic Surgery</h3>
                     <p>Corrective jaw surgery to improve function and appearance. We work with orthodontists to achieve optimal alignment and results.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">âï¸</div>
+                    <div class="service-icon">&#x2695;&#xFE0F;</div>
                     <h3>Emergency Oral Surgery</h3>
                     <p>Emergency dental extractions, fracture repair, and trauma management available for urgent situations. Same-day appointments offered.</p>
                 </div>
@@ -1003,17 +762,17 @@
             <h2>What Our Patients Say</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <div class="stars">âââââ</div>
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p class="testimonial-text">"I was terrified about my wisdom teeth extraction, but the entire team made me feel so comfortable and cared for. The procedure went smoothly, and my recovery was quick. Highly recommend!"</p>
                     <p class="testimonial-author">- Sarah Mitchell</p>
                 </div>
                 <div class="testimonial-card fade-in">
-                    <div class="stars">âââââ</div>
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p class="testimonial-text">"The professionalism and expertise of Dr. Stuart is unmatched. He explained every step of my implant procedure, and the results are incredible. Best decision I made for my smile!"</p>
                     <p class="testimonial-author">- Michael Johnson</p>
                 </div>
                 <div class="testimonial-card fade-in">
-                    <div class="stars">âââââ</div>
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p class="testimonial-text">"From my initial consultation to post-operative care, I felt like family. The staff genuinely cares about their patients. I can't thank Dr. Flanagan enough for her expertise and kindness."</p>
                     <p class="testimonial-author">- Jessica Thompson</p>
                 </div>
