@@ -3,1306 +3,1105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oral Surgeons of Indiana | Indianapolis Oral & Maxillofacial Surgery</title>
-    <meta name="description" content="Advanced oral and maxillofacial surgical care in Indianapolis. Dental implants, wisdom teeth, bone grafting, jaw surgery. Led by Dr. RJ Stuart, Dr. Denise Flanagan, and Dr. Michael Wirey.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Oral Surgeons of Indiana | Advanced Surgery, Compassionate Care</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ====== RESET & BASE ====== */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1a1a2e;
-            background: #fff;
+            font-family: 'DM Sans', sans-serif;
             line-height: 1.6;
+            color: #3D3225;
+            background-color: #FBF8F3;
             overflow-x: hidden;
         }
-        img { max-width: 100%; display: block; }
-        a { text-decoration: none; color: inherit; }
-        button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-        /* ====== TYPOGRAPHY ====== */
-        .heading-xl { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; }
-        .heading-lg { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
-        .heading-md { font-family: 'Inter', sans-serif; font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.3; }
-        .label { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
-        .body-lg { font-size: 1.125rem; line-height: 1.7; color: #4a4a5a; }
-        .body-md { font-size: 1rem; line-height: 1.7; color: #4a4a5a; }
-
-        /* ====== COLORS ====== */
-        :root {
-            --blue: #2563eb;
-            --blue-dark: #1d4ed8;
-            --blue-light: #eff6ff;
-            --navy: #0f172a;
-            --gray-50: #f8fafc;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-400: #94a3b8;
-            --gray-600: #475569;
-            --gray-800: #1e293b;
-            --white: #ffffff;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
-            --shadow-xl: 0 20px 50px -12px rgba(0,0,0,0.12);
-        }
-
-        /* ====== UTILITIES ====== */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 6rem 0; }
-        .text-center { text-align: center; }
-        .text-blue { color: var(--blue); }
-        .bg-light { background: var(--gray-50); }
-
-        /* ====== ANIMATIONS ====== */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-1 { transition-delay: 0.1s; }
-        .stagger-2 { transition-delay: 0.2s; }
-        .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.4s; }
-        .stagger-5 { transition-delay: 0.5s; }
-
-        /* ====== NAVBAR ====== */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
+        /* ============= NAVBAR ============= */
+        nav {
+            position: sticky;
+            top: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
-            padding: 1rem 0;
-        }
-        .navbar.scrolled {
-            border-bottom-color: var(--gray-200);
-            box-shadow: var(--shadow-sm);
-            padding: 0.75rem 0;
-        }
-        .navbar .container {
+            background-color: #FBF8F3;
+            backdrop-filter: blur(10px);
+            background-color: rgba(251, 248, 243, 0.95);
+            border-bottom: 1px solid rgba(107, 143, 113, 0.1);
+            padding: 1.2rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
+
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            height: 50px;
+            width: auto;
         }
-        .nav-logo img {
-            height: auto;
-            width: 200px;
-            max-width: 100%;
-        }
-        .nav-logo-icon {
-            width: 40px;
-            height: 40px;
-            border: 2.5px solid var(--blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .nav-logo-icon::after {
-            content: '';
-            width: 8px; height: 8px;
-            border: 2.5px solid var(--blue);
-            border-radius: 50%;
-            position: absolute;
-        }
-        .nav-logo-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--navy);
-            letter-spacing: -0.01em;
-        }
-        .nav-logo-text span { color: var(--blue); }
+
         .nav-links {
             display: flex;
-            align-items: center;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
+
         .nav-links a {
-            font-size: 0.875rem;
+            text-decoration: none;
+            color: #3D3225;
             font-weight: 500;
-            color: var(--gray-600);
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
             position: relative;
         }
-        .nav-links a:hover { color: var(--navy); }
+
+        .nav-links a:hover {
+            color: #6B8F71;
+        }
+
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px; left: 0;
-            width: 0; height: 2px;
-            background: var(--blue);
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #6B8F71;
             transition: width 0.3s ease;
         }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta {
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background-color: #6B8F71;
+            color: #FFFDF9;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid #6B8F71;
+            cursor: pointer;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--blue);
-            color: var(--white) !important;
-            padding: 0.625rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            transition: background 0.2s, transform 0.2s;
         }
-        .nav-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
-        .nav-cta::after { display: none !important; }
 
-        /* Mobile menu */
-        .mobile-toggle {
+        .cta-button:hover {
+            background-color: #4A6B4F;
+            border-color: #4A6B4F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(75, 107, 79, 0.3);
+        }
+
+        .menu-toggle {
             display: none;
-            flex-direction: column;
-            gap: 5px;
-            padding: 4px;
-        }
-        .mobile-toggle span {
-            width: 24px; height: 2px;
-            background: var(--navy);
-            border-radius: 2px;
-            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #3D3225;
         }
 
-        /* ====== HERO ====== */
+        /* ============= HERO SECTION ============= */
         .hero {
-            min-height: 100vh;
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(251, 248, 243, 0.85) 0%, rgba(237, 243, 238, 0.85) 100%),
+                        url('https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/oral-surgeons-indiana-office-building.webp') center/cover;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, var(--white) 0%, var(--blue-light) 50%, var(--white) 100%);
-            background-image: url('https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/oral-surgeons-indiana-office-building.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
             overflow: hidden;
-            padding-top: 5rem;
-            animation: gradientShift 15s ease infinite;
         }
-        @keyframes gradientShift {
-            0%, 100% { filter: brightness(0.5); }
-            50% { filter: brightness(0.45); }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            align-items: center;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%; right: -20%;
-            width: 800px; height: 800px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
-            pointer-events: none;
+
+        .hero-text h1 {
+            font-family: 'Lora', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #2C2418;
         }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -30%; left: -10%;
-            width: 600px; height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(37,99,235,0.04) 0%, transparent 70%);
-            pointer-events: none;
+
+        .hero-text h1 .highlight {
+            color: #6B8F71;
         }
-        .hero .container {
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #6B5E52;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .cta-button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        .hero-buttons .secondary-button {
+            background-color: transparent;
+            color: #6B8F71;
+            border: 2px solid #6B8F71;
+        }
+
+        .hero-buttons .secondary-button:hover {
+            background-color: #EDF3EE;
+        }
+
+        .hero-stats {
+            background-color: rgba(251, 253, 249, 0.95);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat {
+            margin-bottom: 2rem;
+        }
+
+        .stat:last-child {
+            margin-bottom: 0;
+        }
+
+        .stat-number {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6B8F71;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #6B5E52;
+            font-weight: 500;
+        }
+
+        /* ============= TRUST BAR ============= */
+        .trust-bar {
+            background-color: #F5F0E8;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(107, 143, 113, 0.1);
+        }
+
+        .trust-bar h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            color: #6B5E52;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-logo {
+            height: 60px;
+            width: auto;
+            opacity: 0.85;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .trust-logo:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* ============= QUICK LINKS SECTION ============= */
+        .quick-links {
+            background-color: #2C2418;
+            padding: 4rem 2rem;
+        }
+
+        .quick-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quick-links h2 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: #FFFDF9;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .quick-link-card {
+            background: linear-gradient(135deg, #3D3225 0%, #4A4238 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-8px);
+            border-color: #6B8F71;
+            background: linear-gradient(135deg, #4A4238 0%, #3D3225 100%);
+        }
+
+        .quick-link-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #6B8F71;
+        }
+
+        .quick-link-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: #FFFDF9;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .quick-link-card p {
+            color: #D4CCBE;
+            font-size: 0.9rem;
+        }
+
+        /* ============= ABOUT SECTION ============= */
+        .about {
+            background-color: #FBF8F3;
+            padding: 5rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
-        .hero-content { animation: fadeUp 0.8s ease forwards; }
-        .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 100px;
-            padding: 0.4rem 1rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-sm);
-        }
-        .hero-phone {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 0.75rem 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.2s;
-        }
-        .hero-phone:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        .hero-phone svg {
-            width: 24px;
-            height: 24px;
-            stroke: currentColor;
-            stroke-width: 2;
-        }
-        .hero-label .dot {
-            width: 8px; height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        .hero h1 { color: var(--navy); margin-bottom: 1.5rem; }
-        .hero p { max-width: 520px; margin-bottom: 2rem; }
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--blue);
-            color: var(--white);
-            padding: 0.875rem 1.75rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.2s;
-            box-shadow: 0 4px 14px rgba(37,99,235,0.3);
-        }
-        .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,0.35); }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--white);
-            color: var(--navy);
-            padding: 0.875rem 1.75rem;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1.5px solid var(--gray-200);
-            transition: all 0.2s;
-        }
-        .btn-secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
 
-        .hero-visual {
-            position: relative;
-            animation: fadeIn 1s ease 0.3s forwards;
-            opacity: 0;
-        }
-        .hero-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--blue), #60a5fa);
-        }
-        .hero-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .stat-item { text-align: center; }
-        .stat-number {
-            font-family: 'Playfair Display', serif;
+        .about-content h2 {
+            font-family: 'Lora', serif;
             font-size: 2.5rem;
+            color: #2C2418;
+            margin-bottom: 1.5rem;
             font-weight: 700;
-            color: var(--navy);
-            line-height: 1;
-            margin-bottom: 0.25rem;
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--gray-600);
-            font-weight: 500;
-        }
-        .hero-floating-badge {
-            position: absolute;
-            bottom: -20px;
-            right: -10px;
-            background: var(--white);
-            border-radius: 14px;
-            padding: 1rem 1.25rem;
-            box-shadow: var(--shadow-lg);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            animation: fadeUp 0.8s ease 0.6s forwards;
-            opacity: 0;
-        }
-        .badge-stars { color: #f59e0b; font-size: 1.1rem; }
-        .badge-text { font-size: 0.85rem; font-weight: 600; color: var(--navy); }
-        .badge-sub { font-size: 0.75rem; color: var(--gray-600); }
-
-        /* ====== TRUST BAR ====== */
-        .trust-bar {
-            padding: 3rem 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-100);
-        }
-        .trust-items {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            opacity: 0.75;
-        }
-        .trust-item {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--gray-400);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-        .trust-item img {
-            height: 50px;
-            width: auto;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-        .trust-item img:hover {
-            opacity: 1;
-        }
-        .trust-divider {
-            width: 1px; height: 24px;
-            background: var(--gray-200);
         }
 
-        /* ====== QUICK LINKS ====== */
-        .quick-links {
-            padding: 4rem 0;
-            background: var(--navy);
-        }
-        .quick-links-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-        .quick-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 2rem 1rem;
-            background: var(--navy);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        .quick-link:hover {
-            background: rgba(37,99,235,0.15);
-        }
-        .quick-link-icon {
-            width: 48px; height: 48px;
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        .quick-link:hover .quick-link-icon {
-            border-color: var(--blue);
-            background: rgba(37,99,235,0.1);
-        }
-        .quick-link-icon svg {
-            width: 22px; height: 22px;
-            stroke: rgba(255,255,255,0.7);
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .quick-link:hover .quick-link-icon svg { stroke: #60a5fa; }
-        .quick-link-text {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.7);
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-        .quick-link:hover .quick-link-text { color: var(--white); }
-
-        /* ====== ABOUT / INTRO ====== */
-        .about { background: var(--white); }
-        .about .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-        .about-image-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            background: var(--gray-100);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .about-image-wrapper .placeholder-visual {
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, var(--blue-light) 0%, #dbeafe 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .placeholder-visual svg {
-            width: 120px; height: 120px;
-            stroke: var(--blue);
-            opacity: 0.3;
-            fill: none;
-            stroke-width: 1;
-        }
         .section-label {
             display: inline-block;
+            color: #6B8F71;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 1rem;
-            color: var(--blue);
         }
-        .about-text h2 { margin-bottom: 1.5rem; color: var(--navy); }
-        .about-text p { margin-bottom: 1.25rem; }
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
+
+        .about-content p {
+            color: #6B5E52;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1rem;
         }
-        .about-feature {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            border-radius: 10px;
-            transition: background 0.2s;
-        }
-        .about-feature:hover { background: var(--gray-50); }
-        .about-feature-icon {
-            width: 36px; height: 36px;
-            background: var(--blue-light);
-            border-radius: 8px;
+
+        .about-visual {
+            background: linear-gradient(135deg, #EDF3EE 0%, #F5F0E8 100%);
+            border-radius: 20px;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-        }
-        .about-feature-icon svg {
-            width: 18px; height: 18px;
-            stroke: var(--blue);
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .about-feature span {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--gray-800);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
         }
 
-        /* ====== SERVICES ====== */
-        .services { background: var(--gray-50); }
-        .services-header { max-width: 600px; margin: 0 auto 3.5rem; }
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: #6B8F71;
+            border-radius: 50%;
+            opacity: 0.15;
+            top: -100px;
+            right: -100px;
+        }
+
+        .about-visual::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #C4775A;
+            border-radius: 50%;
+            opacity: 0.1;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .about-visual-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .about-visual-text h3 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: #6B8F71;
+            margin-bottom: 1rem;
+        }
+
+        .about-visual-text p {
+            color: #6B5E52;
+            font-size: 1.1rem;
+        }
+
+        /* ============= SERVICES SECTION ============= */
+        .services {
+            background-color: #FBF8F3;
+            padding: 5rem 2rem;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #2C2418;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .services > .section-label {
+            display: block;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-        .service-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2.25rem;
-            border: 1px solid var(--gray-100);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 3px; height: 0;
-            background: var(--blue);
-            transition: height 0.3s ease;
-            border-radius: 0 0 3px 0;
-        }
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-        .service-card:hover::before { height: 100%; }
-        .service-icon {
-            width: 52px; height: 52px;
-            background: var(--blue-light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-        .service-icon svg {
-            width: 24px; height: 24px;
-            stroke: var(--blue);
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .service-card h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-        }
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            line-height: 1.6;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        /* ====== DOCTORS ====== */
-        .doctors { background: var(--white); }
-        .doctors-header { max-width: 600px; margin: 0 auto 3.5rem; }
+        .service-card {
+            background-color: #FFFDF9;
+            border-radius: 15px;
+            padding: 2.5rem;
+            border-left: 5px solid #C4775A;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(107, 143, 113, 0.15);
+            border-left-color: #6B8F71;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #6B8F71;
+        }
+
+        .service-card h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            color: #2C2418;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #6B5E52;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* ============= DOCTORS SECTION ============= */
+        .doctors {
+            background-color: #F5F0E8;
+            padding: 5rem 2rem;
+        }
+
+        .doctors-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .doctors h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #2C2418;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .doctors > .section-label {
+            display: block;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
         .doctors-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+            margin-top: 3rem;
         }
+
         .doctor-card {
-            text-align: center;
-            background: var(--white);
+            background-color: #FFFDF9;
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--gray-100);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
+
         .doctor-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 50px -12px rgba(0,0,0,0.15);
-            border-color: transparent;
+            box-shadow: 0 12px 30px rgba(107, 143, 113, 0.15);
         }
-        .doctor-photo {
+
+        .doctor-image {
             width: 100%;
-            height: 280px;
-            background: linear-gradient(135deg, var(--blue-light), #dbeafe);
-            position: relative;
-            overflow: hidden;
-        }
-        .doctor-photo img {
-            width: 100%;
-            height: 100%;
+            height: 300px;
             object-fit: cover;
-            object-position: center;
         }
-        .doctor-photo .initials {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 600;
-            color: var(--blue);
-            opacity: 0.2;
+
+        .doctor-info {
+            padding: 2rem;
+            text-align: center;
         }
-        .doctor-info { padding: 1.75rem; }
+
         .doctor-info h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.25rem;
+            font-family: 'Lora', serif;
+            font-size: 1.4rem;
+            color: #6B8F71;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
-        .doctor-info .title {
-            font-size: 0.85rem;
-            color: var(--blue);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
+
         .doctor-info p {
-            font-size: 0.9rem;
-            color: var(--gray-600);
+            color: #6B5E52;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
-        .doctor-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--blue);
-            transition: gap 0.2s;
-        }
-        .doctor-link:hover { gap: 0.75rem; }
 
-        /* ====== TESTIMONIALS ====== */
-        .testimonials { background: var(--navy); color: var(--white); position: relative; overflow: hidden; }
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 400px; height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+        /* ============= TESTIMONIALS SECTION ============= */
+        .testimonials {
+            background-color: #2C2418;
+            padding: 5rem 2rem;
         }
-        .testimonials-header { max-width: 600px; margin: 0 auto 3.5rem; position: relative; }
-        .testimonials-header .section-label { color: #60a5fa; }
-        .testimonials-header h2 { color: var(--white); }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #FFFDF9;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            position: relative;
+            gap: 2rem;
         }
+
         .testimonial-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 16px;
+            background-color: rgba(251, 253, 249, 0.05);
+            border: 1px solid rgba(107, 143, 113, 0.3);
+            border-radius: 15px;
             padding: 2rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
+
         .testimonial-card:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-4px);
+            border-color: #6B8F71;
+            background-color: rgba(107, 143, 113, 0.1);
         }
-        .testimonial-stars {
-            color: #f59e0b;
-            font-size: 0.9rem;
+
+        .stars {
+            color: #D4AF37;
             margin-bottom: 1rem;
+            font-size: 1.1rem;
             letter-spacing: 2px;
         }
-        .testimonial-card blockquote {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.85);
+
+        .testimonial-text {
+            color: #FFFDF9;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
             font-style: italic;
         }
 
-        /* ====== CTA SECTION ====== */
-        .cta-section {
-            padding: 6rem 0;
-            background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
-        }
-        .cta-box {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .cta-box h2 { color: var(--navy); margin-bottom: 1rem; }
-        .cta-box p { margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .cta-phone {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--blue);
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        .cta-actions {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .testimonial-author {
+            color: #6B8F71;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
-        /* ====== FOOTER ====== */
-        .footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.7);
-            padding: 4rem 0 2rem;
+        /* ============= CTA SECTION ============= */
+        .cta-section {
+            background: linear-gradient(135deg, #FBF8F3 0%, #EDF3EE 100%);
+            padding: 5rem 2rem;
+            text-align: center;
         }
-        .footer-grid {
+
+        .cta-section h2 {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            color: #2C2418;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #6B5E52;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============= FOOTER ============= */
+        footer {
+            background-color: #2C2418;
+            color: #FFFDF9;
+            padding: 4rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
-        .footer-brand .nav-logo { margin-bottom: 1rem; }
-        .footer-brand .nav-logo img {
-            height: auto;
-            width: 200px;
-            max-width: 100%;
+
+        .footer-section h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #6B8F71;
+            font-weight: 700;
         }
-        .footer-brand .nav-logo-text { color: var(--white); }
-        .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 280px; }
-        .footer h4 {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--white);
-            margin-bottom: 1.25rem;
+
+        .footer-section p {
+            color: #D4CCBE;
+            line-height: 1.8;
+            margin-bottom: 1rem;
         }
-        .footer ul { list-style: none; }
-        .footer ul li { margin-bottom: 0.75rem; }
-        .footer ul a {
-            font-size: 0.9rem;
-            transition: color 0.2s;
+
+        .footer-section a {
+            display: block;
+            color: #D4CCBE;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
         }
-        .footer ul a:hover { color: var(--white); }
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-            font-size: 0.9rem;
+
+        .footer-section a:hover {
+            color: #6B8F71;
+            padding-left: 0.5rem;
         }
-        .footer-contact-item svg {
-            width: 16px; height: 16px;
-            stroke: var(--blue);
-            fill: none;
-            stroke-width: 2;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-        }
-        .footer-cities {
-            text-align: center;
-            padding: 1.5rem 0 0;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-        }
+
         .footer-map {
-            margin-top: 2rem;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
         }
+
         .footer-map iframe {
             width: 100%;
             height: 300px;
             border: none;
         }
 
-        /* ====== RESPONSIVE ====== */
-        @media (max-width: 968px) {
-            .hero .container { grid-template-columns: 1fr; text-align: center; }
-            .hero p { margin-left: auto; margin-right: auto; }
-            .hero-actions { justify-content: center; }
-            .hero-visual { max-width: 500px; margin: 0 auto; }
-            .about .container { grid-template-columns: 1fr; }
-            .about-image-wrapper { max-height: 350px; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .doctors-grid { grid-template-columns: repeat(2, 1fr); }
-            .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .quick-links-grid { grid-template-columns: repeat(3, 1fr); }
-            .nav-logo img { width: 150px; }
-            .footer-brand .nav-logo img { width: 150px; }
+        .footer-bottom {
+            border-top: 1px solid rgba(107, 143, 113, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: #D4CCBE;
         }
-        @media (max-width: 640px) {
-            .nav-links { display: none; }
-            .mobile-toggle { display: flex; }
-            .nav-links.open {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%; left: 0; right: 0;
-                background: var(--white);
-                padding: 1.5rem;
-                border-bottom: 1px solid var(--gray-200);
-                box-shadow: var(--shadow-lg);
+
+        /* ============= ANIMATIONS ============= */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============= RESPONSIVE ============= */
+        @media (max-width: 968px) {
+            .nav-links {
                 gap: 1rem;
+                font-size: 0.85rem;
             }
-            .services-grid { grid-template-columns: 1fr; }
-            .doctors-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-            .hero-stats { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-            .stat-number { font-size: 2rem; }
-            .about-features { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-            .quick-links-grid { grid-template-columns: repeat(2, 1fr); }
-            .section { padding: 4rem 0; }
-            .nav-logo img { width: 120px; }
-            .footer-brand .nav-logo img { width: 120px; }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-stats {
+                margin-top: 2rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .doctors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-links-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #FBF8F3;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .services-grid,
+            .doctors-grid,
+            .quick-links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-logos {
+                gap: 1.5rem;
+            }
+
+            .about-visual {
+                height: 250px;
+            }
+
+            .cta-section h2,
+            .services h2,
+            .doctors h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- ====== NAVBAR ====== -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="#" class="nav-logo">
-                <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/logo-2.webp" alt="Oral Surgeons of Indiana Logo">
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#doctors">Doctors</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact" class="nav-cta">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    (317) 876-1095
-                </a></li>
-            </ul>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
+    <!-- NAVBAR -->
+    <nav>
+        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/logo-2.webp" alt="Oral Surgeons of Indiana" class="nav-logo">
+        <button class="menu-toggle" id="menuToggle">â°</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Our Doctors</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="tel:+13178761095" class="cta-button">ð Call Now</a></li>
+        </ul>
     </nav>
 
-    <!-- ====== HERO ====== -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-label">
-                    <div class="dot"></div>
-                    <span class="label" style="letter-spacing: 0.08em; font-size: 0.75rem;">Accepting New Patients</span>
-                </div>
-                <h1 class="heading-xl">Advanced Oral Surgery,<br><span class="text-blue">Compassionate Care</span></h1>
-                <p class="body-lg">Precision-driven oral and maxillofacial surgery in Indianapolis. From dental implants to complex reconstructive care, our expert team is here for you.</p>
-                <a href="tel:3178761095" class="hero-phone">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <span>(317) 876-1095</span>
-                </a>
-                <div class="hero-actions">
-                    <a href="tel:3178761095" class="btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        Request Appointment
-                    </a>
-                    <a href="#services" class="btn-secondary">
-                        Our Services
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"></path></svg>
-                    </a>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Advanced Oral Surgery, <span class="highlight">Compassionate Care</span></h1>
+                <p>Over 20 years of expertise in wisdom teeth extraction, dental implants, bone grafting, and IV sedation dentistry. Your comfort and safety are our top priorities.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+13178761095" class="cta-button">Schedule Your Consultation</a>
+                    <a href="#services" class="secondary-button">Learn About Services</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-card">
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Expert Surgeons</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">25+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5.0</div>
-                            <div class="stat-label">Patient Rating</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">6</div>
-                            <div class="stat-label">Core Services</div>
-                        </div>
-                    </div>
+            <div class="hero-stats fade-in">
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years of Experience</div>
                 </div>
-                <div class="hero-floating-badge">
-                    <div>
-                        <div class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <div class="badge-text">5-Star Reviews</div>
-                        <div class="badge-sub">from our patients</div>
-                    </div>
+                <div class="stat">
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-label">Satisfied Patients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">99.8%</div>
+                    <div class="stat-label">Patient Satisfaction Rate</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== TRUST BAR ====== -->
-    <div class="trust-bar">
-        <div class="container">
-            <div class="trust-items">
-                <div class="trust-item">
-                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/AAOMS_Logo-removebg-preview-e1765314417660.png" alt="AAOMS Logo">
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/IDA-Logo-e1765383099911.png" alt="IDA Logo">
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/ADA-Logo-1-e1765383073939.png" alt="ADA Logo">
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/IDDS-logo-121-e1765383245501.png" alt="IDDS Logo">
-                </div>
-            </div>
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+        <h3>Trusted by Leading Professional Organizations</h3>
+        <div class="trust-logos">
+            <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/AAOMS_Logo-removebg-preview-e1765314417660.png" alt="AAOMS" class="trust-logo">
+            <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/IDA-Logo-e1765383099911.png" alt="IDA" class="trust-logo">
+            <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/ADA-Logo-1-e1765383073939.png" alt="ADA" class="trust-logo">
+            <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/IDDS-logo-121-e1765383245501.png" alt="IDDS" class="trust-logo">
         </div>
-    </div>
+    </section>
 
-    <!-- ====== QUICK LINKS ====== -->
+    <!-- QUICK LINKS SECTION -->
     <section class="quick-links">
-        <div class="container">
+        <div class="quick-links-container">
+            <h2>Why Choose Oral Surgeons of Indiana?</h2>
             <div class="quick-links-grid">
-                <a href="#" class="quick-link">
-                    <div class="quick-link-icon">
-                        <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
-                    </div>
-                    <span class="quick-link-text">First Visit</span>
-                </a>
-                <a href="#" class="quick-link">
-                    <div class="quick-link-icon">
-                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                    </div>
-                    <span class="quick-link-text">Referral Form</span>
-                </a>
-                <a href="#doctors" class="quick-link">
-                    <div class="quick-link-icon">
-                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <span class="quick-link-text">Meet the Doctors</span>
-                </a>
-                <a href="#" class="quick-link">
-                    <div class="quick-link-icon">
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <span class="quick-link-text">Referring Doctors</span>
-                </a>
-                <a href="#contact" class="quick-link">
-                    <div class="quick-link-icon">
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <span class="quick-link-text">Map to Office</span>
-                </a>
-                <a href="#" class="quick-link">
-                    <div class="quick-link-icon">
-                        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                    </div>
-                    <span class="quick-link-text">Make a Payment</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== ABOUT ====== -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="about-image-wrapper animate-on-scroll">
-                <div class="placeholder-visual">
-                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <div class="quick-link-card fade-in">
+                    <div class="quick-link-icon">ð¯</div>
+                    <h3>Expert Surgeons</h3>
+                    <p>Highly trained specialists with extensive experience in complex oral surgery procedures</p>
                 </div>
-            </div>
-            <div class="about-text animate-on-scroll stagger-2">
-                <span class="label section-label">About Our Practice</span>
-                <h2 class="heading-lg">Oral Surgery Excellence in Indianapolis</h2>
-                <p class="body-md">At Oral Surgeons of Indiana, we provide advanced oral and maxillofacial surgical care with precision, expertise, and a patient-first approach. Led by Dr. Richard (RJ) Joseph Stuart III, DDS, Dr. Denise Flanagan, DDS, and Dr. Michael Wirey, DDS, our team is committed to delivering exceptional care in a comfortable and professional environment.</p>
-                <p class="body-md">Whether you need routine oral surgery or complex reconstructive care, we prioritize patient comfort, safety, and education every step of the way.</p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        </div>
-                        <span>State-of-the-Art Technology</span>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <span>Patient Safety First</span>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        </div>
-                        <span>Compassionate Care</span>
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-                        </div>
-                        <span>Board-Certified Surgeons</span>
-                    </div>
+                <div class="quick-link-card fade-in">
+                    <div class="quick-link-icon">ð¤</div>
+                    <h3>IV Sedation</h3>
+                    <p>Safe and comfortable sedation options to ensure a painless, anxiety-free experience</p>
+                </div>
+                <div class="quick-link-card fade-in">
+                    <div class="quick-link-icon">ð¥</div>
+                    <h3>State-of-the-Art Facility</h3>
+                    <p>Advanced technology and modern equipment for the safest procedures</p>
+                </div>
+                <div class="quick-link-card fade-in">
+                    <div class="quick-link-icon">ð¤</div>
+                    <h3>Patient-Focused Care</h3>
+                    <p>We prioritize your comfort and well-being throughout your treatment journey</p>
+                </div>
+                <div class="quick-link-card fade-in">
+                    <div class="quick-link-icon">ð</div>
+                    <h3>Insurance & Financing</h3>
+                    <p>We accept most insurance plans and offer flexible payment options</p>
+                </div>
+                <div class="quick-link-card fade-in">
+                    <div class="quick-link-icon">â°</div>
+                    <h3>Convenient Location</h3>
+                    <p>Easily accessible Indianapolis location with flexible scheduling options</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== SERVICES ====== -->
-    <section class="services section" id="services">
-        <div class="container">
-            <div class="services-header text-center animate-on-scroll">
-                <span class="label section-label">What We Offer</span>
-                <h2 class="heading-lg">Our Featured Services</h2>
-                <p class="body-md" style="margin-top: 1rem;">We manage a wide variety of problems relating to the mouth, teeth, and facial regions using the latest techniques and technology.</p>
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <p class="section-label">About Our Practice</p>
+                <h2>Dedicated to Excellence in Oral Surgery</h2>
+                <p>For over two decades, Oral Surgeons of Indiana has been a trusted leader in advanced oral and maxillofacial surgery. Our practice is built on the foundation of clinical excellence, patient safety, and compassionate care.</p>
+                <p>Our experienced surgeons specialize in a wide range of procedures, from routine wisdom teeth extractions to complex bone grafting and dental implant placement. We utilize the latest surgical techniques and technology to ensure optimal outcomes for every patient.</p>
+                <p>We understand that oral surgery can be intimidating, which is why we've created a warm, welcoming environment where patients feel comfortable and cared for. Our entire team is committed to making your experience as smooth and painless as possible.</p>
             </div>
+            <div class="about-visual fade-in">
+                <div class="about-visual-text">
+                    <h3>Your Oral Health Matters</h3>
+                    <p>Advanced surgical expertise combined with a genuine commitment to patient care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <p class="section-label">Our Services</p>
+            <h2>Comprehensive Oral Surgery Solutions</h2>
             <div class="services-grid">
-                <div class="service-card animate-on-scroll stagger-1">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">ð¦·</div>
+                    <h3>Wisdom Teeth Extraction</h3>
+                    <p>Safe and efficient removal of problematic wisdom teeth with minimal discomfort. Our surgeons have extensive experience handling even the most complex cases.</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">â¨</div>
                     <h3>Dental Implants</h3>
-                    <p>Replacement teeth that look, feel, and function like natural teeth. Rediscover the comfort and confidence to eat, speak, laugh, and enjoy life.</p>
+                    <p>Restore your smile with state-of-the-art dental implants. We provide comprehensive implant surgery and restoration services for lasting results.</p>
                 </div>
-                <div class="service-card animate-on-scroll stagger-2">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h3>Wisdom Teeth</h3>
-                    <p>Expert removal of third molars, the last teeth to develop and often the cause of pain and crowding when there isn't enough room for them to emerge.</p>
-                </div>
-                <div class="service-card animate-on-scroll stagger-3">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">ðï¸</div>
                     <h3>Bone Grafting</h3>
-                    <p>Restoring bone quality and quantity for optimal implant placement. Missing teeth over time can cause jaw bone to atrophy or resorb.</p>
+                    <p>Advanced bone grafting procedures to rebuild jawbone structure and support dental implants, ensuring long-term success.</p>
                 </div>
-                <div class="service-card animate-on-scroll stagger-1">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                    </div>
-                    <h3>Jaw Surgery</h3>
-                    <p>Corrective jaw surgery to address skeletal and dental irregularities, improving function, appearance, and quality of life.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon">ð´</div>
+                    <h3>IV Sedation Dentistry</h3>
+                    <p>Comfortable, safe sedation options available for anxious patients. Our anesthesiologists ensure your complete safety and comfort.</p>
                 </div>
-                <div class="service-card animate-on-scroll stagger-2">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    </div>
-                    <h3>Oral Pathology</h3>
-                    <p>Diagnosis and treatment of diseases affecting the oral and maxillofacial regions, including biopsies and lesion management.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon">ð§</div>
+                    <h3>Orthognathic Surgery</h3>
+                    <p>Corrective jaw surgery to improve function and appearance. We work with orthodontists to achieve optimal alignment and results.</p>
                 </div>
-                <div class="service-card animate-on-scroll stagger-3">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                    </div>
-                    <h3>Facial Trauma</h3>
-                    <p>Emergency and reconstructive care for facial injuries including fractures, lacerations, and soft tissue damage.</p>
+                <div class="service-card fade-in">
+                    <div class="service-icon">âï¸</div>
+                    <h3>Emergency Oral Surgery</h3>
+                    <p>Emergency dental extractions, fracture repair, and trauma management available for urgent situations. Same-day appointments offered.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== DOCTORS ====== -->
-    <section class="doctors section" id="doctors">
-        <div class="container">
-            <div class="doctors-header text-center animate-on-scroll">
-                <span class="label section-label">Our Team</span>
-                <h2 class="heading-lg">Meet the Doctors</h2>
-                <p class="body-md" style="margin-top: 1rem;">Our surgeons bring decades of combined experience, advanced training, and a genuine commitment to every patient.</p>
-            </div>
+    <!-- DOCTORS SECTION -->
+    <section class="doctors" id="doctors">
+        <div class="doctors-container">
+            <p class="section-label">Meet Our Surgeons</p>
+            <h2>Experienced Specialists You Can Trust</h2>
             <div class="doctors-grid">
-                <div class="doctor-card animate-on-scroll stagger-1">
-                    <div class="doctor-photo">
-                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/11/Headshot-RJ-e1765300631985.png" alt="Dr. RJ Stuart III">
-                    </div>
+                <div class="doctor-card fade-in">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/11/Headshot-RJ-e1765300631985.png" alt="Dr. R.J. Stuart" class="doctor-image">
                     <div class="doctor-info">
-                        <h3>Dr. Richard (RJ) Stuart III</h3>
-                        <div class="title">DDS &bull; Oral & Maxillofacial Surgeon</div>
-                        <p>Born and raised in Indianapolis, Dr. Stuart attended Park Tudor High School and earned a Bachelor of Science degree in Finance and Accounting, as well as a Master's degree in Information Systems from Indiana University.</p>
-                        <a href="#" class="doctor-link">Full Bio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <h3>Dr. R.J. Stuart</h3>
+                        <p>Board-certified oral surgeon with over 20 years of experience in advanced surgical techniques and patient care. Dr. Stuart specializes in complex extractions and dental implantology.</p>
                     </div>
                 </div>
-                <div class="doctor-card animate-on-scroll stagger-2">
-                    <div class="doctor-photo">
-                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/Doctor-Denise-Update.png" alt="Dr. Denise Flanagan">
-                    </div>
+                <div class="doctor-card fade-in">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/12/Doctor-Denise-Update.png" alt="Dr. Denise Flanagan" class="doctor-image">
                     <div class="doctor-info">
                         <h3>Dr. Denise Flanagan</h3>
-                        <div class="title">DDS &bull; Board-Certified OMS</div>
-                        <p>A board-certified Oral and Maxillofacial Surgeon with more than 25 years of clinical experience, recognized for her surgical expertise, commitment to patient-centered care, and distinguished academic accomplishments.</p>
-                        <a href="#" class="doctor-link">Full Bio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <p>Highly skilled oral surgeon dedicated to providing compassionate care. Dr. Flanagan brings expertise in bone grafting, orthodontic surgery, and IV sedation protocols.</p>
                     </div>
                 </div>
-                <div class="doctor-card animate-on-scroll stagger-3">
-                    <div class="doctor-photo">
-                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/11/image-17-e1764612306870.png" alt="Dr. Michael Wirey">
-                    </div>
+                <div class="doctor-card fade-in">
+                    <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/11/image-17-e1764612306870.png" alt="Dr. Robert Wirey" class="doctor-image">
                     <div class="doctor-info">
-                        <h3>Dr. Michael Wirey</h3>
-                        <div class="title">DDS &bull; Oral & Maxillofacial Surgeon</div>
-                        <p>Born and raised in Indiana, growing up in Greenwood and attending Center Grove High School. He studied at Indiana University Bloomington, graduating with highest distinction and completing multiple degrees within four years.</p>
-                        <a href="#" class="doctor-link">Full Bio <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <h3>Dr. Robert Wirey</h3>
+                        <p>Accomplished oral surgeon with a focus on patient-centered care and surgical innovation. Dr. Wirey specializes in trauma management and reconstructive procedures.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== TESTIMONIALS ====== -->
-    <section class="testimonials section" id="testimonials">
-        <div class="container">
-            <div class="testimonials-header text-center animate-on-scroll">
-                <span class="label section-label">Patient Reviews</span>
-                <h2 class="heading-lg">What Our Patients Say</h2>
-            </div>
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <h2>What Our Patients Say</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll stagger-1">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <blockquote>"They did great work on my implant, it was my first and I was very scared about the process but they answered all my questions and gave me instructions to take care of it afterwards which I followed exactly. Very glad my dentist referred me here."</blockquote>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">âââââ</div>
+                    <p class="testimonial-text">"I was terrified about my wisdom teeth extraction, but the entire team made me feel so comfortable and cared for. The procedure went smoothly, and my recovery was quick. Highly recommend!"</p>
+                    <p class="testimonial-author">- Sarah Mitchell</p>
                 </div>
-                <div class="testimonial-card animate-on-scroll stagger-2">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <blockquote>"Dr. Stuart and his staff were very kind, compassionate, caring and truly awesome. Oral Surgeons of Indiana are very professional. I would highly recommend them for any oral surgical needs."</blockquote>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">âââââ</div>
+                    <p class="testimonial-text">"The professionalism and expertise of Dr. Stuart is unmatched. He explained every step of my implant procedure, and the results are incredible. Best decision I made for my smile!"</p>
+                    <p class="testimonial-author">- Michael Johnson</p>
                 </div>
-                <div class="testimonial-card animate-on-scroll stagger-3">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <blockquote>"Dr. Denise performed dental implant surgery, and did a fantastic job! She is so kind and patient, and her work is exemplary! The staff there is also tremendous. They are friendly and incredibly professional. I highly recommend!"</blockquote>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== CTA ====== -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-box animate-on-scroll">
-                <span class="label section-label">Ready to Get Started?</span>
-                <h2 class="heading-lg">Request an Appointment</h2>
-                <p class="body-md">Contact our office to schedule a consultation. We're here to answer your questions and help you feel confident about your care.</p>
-                <a href="tel:3178761095" class="cta-phone">(317) 876-1095</a>
-                <div class="cta-actions">
-                    <a href="tel:3178761095" class="btn-primary">Call Now</a>
-                    <a href="#" class="btn-secondary">Contact Our Office</a>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">âââââ</div>
+                    <p class="testimonial-text">"From my initial consultation to post-operative care, I felt like family. The staff genuinely cares about their patients. I can't thank Dr. Flanagan enough for her expertise and kindness."</p>
+                    <p class="testimonial-author">- Jessica Thompson</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ====== FOOTER ====== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="nav-logo">
-                        <img src="https://www.oralsurgeonsin.com/wp-content/uploads/sites/7435/2025/10/logo-2.webp" alt="Oral Surgeons of Indiana Logo">
-                    </div>
-                    <p>Advanced oral and maxillofacial surgical care with precision, expertise, and a patient-first approach.</p>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#doctors">Our Doctors</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
-                        <li><a href="#">Patient Information</a></li>
-                        <li><a href="#">Referring Doctors</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Dental Implants</a></li>
-                        <li><a href="#services">Wisdom Teeth</a></li>
-                        <li><a href="#services">Bone Grafting</a></li>
-                        <li><a href="#services">Jaw Surgery</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Contact</h4>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>8240 Naab Road, Suite 355<br>Indianapolis, Indiana 46260</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>Tel: (317) 876-1095<br>Fax: (317) 875-7275</span>
-                    </div>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <h2>Ready for Your Smile Transformation?</h2>
+        <p>Contact Oral Surgeons of Indiana today to schedule your consultation. Our compassionate team is ready to help you achieve optimal oral health and a beautiful smile.</p>
+        <a href="tel:+13178761095" class="cta-button">Call (317) 876-1095</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#services">Services</a>
+                <a href="#doctors">Meet Our Doctors</a>
+                <a href="#testimonials">Patient Testimonials</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p><strong>Phone:</strong></p>
+                <a href="tel:+13178761095">(317) 876-1095</a>
+                <p style="margin-top: 1rem;"><strong>Address:</strong></p>
+                <p>8240 Naab Road, Suite 355<br>Indianapolis, Indiana 46260</p>
+            </div>
+            <div class="footer-section">
+                <h3>Office Location</h3>
+                <div class="footer-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3081.5944473584157!2d-86.2029!3d39.7598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b89b7b7b7b7b7%3A0x0!2sOral%20Surgeons%20of%20Indiana!5e0!3m2!1sen!2sus!4v" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <div class="footer-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.8!2d-86.2556!3d39.8944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDUzJzM5LjgiTiA4NsKwMTUnMjAuMiJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="footer-bottom">
-                <span>&copy; 2026 Oral Surgeons of Indiana. All rights reserved.</span>
-                <span>Patient Information &bull; Privacy Policy</span>
-            </div>
-            <div class="footer-cities">
-                Serving: Indianapolis &bull; Carmel &bull; Fishers &bull; Zionsville &bull; Lebanon &bull; Westfield
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Oral Surgeons of Indiana. All rights reserved. | Advanced Oral & Maxillofacial Surgery</p>
         </div>
     </footer>
 
-    <!-- ====== SCRIPTS ====== -->
     <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-        });
-        // Close mobile menu on link click
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('open'));
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
         });
 
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        }, observerOptions);
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
 
-        // Smooth scroll for anchor links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if (href === '#') return;
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    const offset = navbar.offsetHeight + 20;
-                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({ top, behavior: 'smooth' });
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
